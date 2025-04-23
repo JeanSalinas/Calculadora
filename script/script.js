@@ -1,26 +1,34 @@
+const resultado = document.getElementById('resultado')
+const alerta = document.getElementById('alerta')
+
 function calcular(operacion) {
-    let numero1 = parseFloat(document.getElementById('numero1').value)
-    let numero2 = parseFloat(document.getElementById('numero2').value)
-    const alerta = document.getElementById('alerta')
-    const resultadoInput = document.getElementById('resultado')
+
+    let n1 = parseFloat(document.getElementById('numeroUno').value)
+    let n2 = parseFloat(document.getElementById('numeroDos').value)
 
     alerta.textContent = ''
-    resultadoInput.value = ''
+    resultado.value = ''
 
-    if (isNaN(numero1) || isNaN(numero2)) {
-        alerta.textContent = 'Por favor, diligencie los dos campos 🤡'
-        return;
+    if (isNaN(n1) || isNaN(n2)) {
+        return alerta.textContent = 'Por favor, diligencie los dos campos 👍'
     }
 
-    if (operacion === 'division' && numero2 == 0) {
-        alerta.textContent = 'No se puede dividir entre cero! ❌'
-        return
+    if (operacion === 'division' && n2 == 0) {
+        return alerta.textContent = 'No se puede dividir entre cero 🤡'
     }
+
     const operaciones = {
-        suma: numero1 + numero2,
-        resta: numero1 - numero2,
-        multiplicacion: numero1 * numero2,
-        division: numero1 / numero2
+        suma: n1 + n2,
+        resta: n1 - n2,
+        multiplicacion: n1 * n2,
+        division: n1 / n2
     }
-    resultadoInput.value = operaciones[operacion]
+    resultado.value = operaciones[operacion]
+}
+
+function limpiar() {
+    resultado.value = ''
+    alerta.textContent = ''
+    document.getElementById('numeroUno').value = ''
+    document.getElementById('numeroDos').value = ''
 }

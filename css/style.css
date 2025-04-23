@@ -1,0 +1,118 @@
+:root {
+    --color-fondo: rgb(206, 206, 206);
+    --color-titulo: rgb(16, 230, 230);
+    --color-alerta: red;
+    --tipo-letra: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --decoracion-texto: 1px black;
+    --color-label: rgb(206, 206, 206);
+    --text-shadow: 4px 5px 4px;
+    --font-titulo: 900;
+    --font-subtitulos: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: var(--tipo-letra);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--color-fondo);
+}
+
+.calculadora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#alerta {
+    font-size: 20pt;
+    color: var(--color-alerta);
+    text-shadow: var(--text-shadow) rgb(248, 140, 113);
+}
+
+.decorado {
+    font-weight: var(--font-subtitulos);
+    -webkit-text-stroke: var(--decoracion-texto);
+    margin: 1vh;
+}
+
+.titulo {
+    font-size: 48pt;
+    font-weight: var(--font-titulo);
+    color: var(--color-titulo);
+    -webkit-text-stroke: 2px black;
+    text-shadow: var(--text-shadow) rgb(31, 161, 140);
+    margin: 2vh;
+}
+
+label {
+    font-size: 25pt;
+    color: var(--color-label);
+    text-shadow: var(--text-shadow) rgb(94, 104, 102);
+}
+
+.inputs {
+    background-color: var(--color-fondo);
+    border: none;
+    border-bottom: 2px solid black;
+    width: 25vw;
+    height: auto;
+    margin: 2vh;
+    outline: none;
+    padding: .5vh;
+}
+
+.inputs:focus {
+    border-radius: 5px;
+    border-bottom: 2px solid var(--color-titulo);
+    background-color: #e6f7ff;
+}
+
+button {
+    height: 4vh;
+    width: 20vw;
+    margin: 1vh;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-titulo);
+    transform: scale(1.1);
+    box-shadow: 4px 5px 5px rgb(95, 95, 95);
+}
+
+@media (max-width: 1000px) {
+    .titulo {
+        font-size: 30pt;
+    }
+
+    #alerta {
+        font-size: 13pt;
+        text-shadow: none;
+    }
+
+    label {
+        font-size: 20pt;
+    }
+
+    .inputs {
+        width: 70vw;
+    }
+
+    button {
+        width: 40vw;
+    }
+}

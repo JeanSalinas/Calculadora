@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="shortcut icon" href="./assets/icon/calculadora.png" type="image/x-icon">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <h1 class="titulo">Calculadora 🧮</h1>
-    <label for="numero1">Numero Uno</label>
-    <input id="numero1" type="number" placeholder="Numero uno">
-    <label for="numero2">Numero Dos</label>
-    <input id="numero2" type="number" placeholder="Numero dos">
-    <label for="resultado">Resultado</label>
-    <input id="resultado" type="number" placeholder="Resultado" readonly>
-    <p id="alerta"></p>
-    <button onclick="calcular('suma')">Sumar</button>
-    <button onclick="calcular('resta')">Restar</button>
-    <button onclick="calcular('multiplicacion')">Multiplicar</button>
-    <button onclick="calcular('division')">Dividir</button>
+    <p id="alerta" class="decorado"></p>
+    <h1 class="titulo">Calculadora🧮</h1>
+    <div class="calculadora">
+        <label class="decorado" for="numeroUno">Número Uno</label>
+        <input type="number" id="numeroUno" class="inputs" placeholder="Número uno">
+        <label class="decorado" for="numeroDos">Número Dos</label>
+        <input type="number" id="numeroDos" class="inputs" placeholder="Número dos">
+        <label class="decorado" for="resultado">Resultado</label>
+        <input type="number" id="resultado" class="inputs" placeholder="Resultado" readonly>
+        <button type="button" onclick="calcular('suma')">Sumar</button>
+        <button type="button" onclick="calcular('resta')">Restar</button>
+        <button type="button" onclick="calcular('multiplicacion')">Multiplicar</button>
+        <button type="button" onclick="calcular('division')">Dividir</button>
+        <button type="button" onclick="limpiar()">Limpiar</button>
+    </div>
 
     <script src="./script/script.js"></script>
 </body>
